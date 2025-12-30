@@ -1,5 +1,11 @@
 <template>
-  <div class="portfolio-container">
+  <div class="portfolio-wrapper">
+    <!-- Animated Background -->
+    <div class="bg-animation">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
     <!-- Header Section -->
     <header class="hero-section text-center text-white py-5">
       <div class="container">
@@ -70,13 +76,15 @@
                   <div 
                     v-for="(project, index) in latestProjects" 
                     :key="project.id"
-                    class="col-lg-4 col-md-6 col-sm-12"
+                    class="col-lg-4 col-md-6"
                   >
-                    <ProjectCard 
-                      :project="project" 
-                      :index="index"
-                      @open-modal="openModal"
-                    />
+                    <div class="project-wrapper h-100" :style="{ animationDelay: `${index * 100}ms` }">
+                      <ProjectCard 
+                        :project="project" 
+                        :index="index"
+                        @open-modal="openModal"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -91,13 +99,15 @@
                   <div 
                     v-for="(project, index) in vanillaProjects" 
                     :key="project.id"
-                    class="col-lg-4 col-md-6 col-sm-12"
+                    class="col-lg-4 col-md-6"
                   >
-                    <ProjectCard 
-                      :project="project" 
-                      :index="index"
-                      @open-modal="openModal"
-                    />
+                    <div class="project-wrapper h-100" :style="{ animationDelay: `${index * 100}ms` }">
+                      <ProjectCard 
+                        :project="project" 
+                        :index="index"
+                        @open-modal="openModal"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -260,6 +270,11 @@ const closeModal = () => {
   selectedProject.value = null
 }
 
+const scrollToProjects = () => {
+  const element = document.getElementById('projects')
+  element?.scrollIntoView({ behavior: 'smooth' })
+}
+
 // Lifecycle hooks
 onMounted(() => {
   // Add scroll animations
@@ -286,72 +301,168 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.portfolio-container {
+.portfolio-wrapper {
   min-height: 100vh;
+  background-color: #0f172a;
+  color: #fff;
+  position: relative;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Animated Background */
+.bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: float 20s infinite;
+}
+
+.blob-1 {
+  top: -10%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: #6366f1;
+  animation-delay: 0s;
+}
+
+.blob-2 {
+  bottom: -10%;
+  right: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: #ec4899;
+  animation-delay: -5s;
+}
+
+.blob-3 {
+  top: 40%;
+  left: 40%;
+  width: 40vw;
+  height: 40vw;
+  background: #8b5cf6;
+  animation-delay: -10s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
 }
 
 .hero-section {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
-  position: relative;
-  overflow: hidden;
+  min-height: 100vh;
+  padding: 2rem 0;
 }
 
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="0,0 1000,100 1000,0"/></svg>');
-  background-size: cover;
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.bg-primary-gradient {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-highlight {
+  color: #8b5cf6;
+  font-weight: 600;
+}
+
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: none;
 }
 
 .projects-section {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 20px 20px 0 0;
-  margin-top: -20px;
-  position: relative;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
-.custom-tab {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  margin: 0 5px;
-  border-radius: 25px;
+.divider {
+  height: 4px;
+  width: 60px;
+  border-radius: 2px;
+}
+
+/* Custom Tabs */
+.custom-nav-pills .nav-link {
+  color: rgba(255, 255, 255, 0.6);
   padding: 12px 24px;
+  font-weight: 500;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  border-radius: 50rem;
 }
 
-.custom-tab:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-  color: white;
+.custom-nav-pills .nav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
 }
 
-.custom-tab.active {
-  background: linear-gradient(45deg, #667eea, #764ba2);
-  border-color: transparent;
-  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
-  color: white;
+.custom-nav-pills .nav-link.active {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
 }
 
 .scroll-indicator {
   position: absolute;
-  bottom: 30px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 24px;
+  z-index: 10;
+  text-align: center;
+}
+
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+
+.tracking-widest {
+  letter-spacing: 0.2em;
+}
+
+.fs-7 {
+  font-size: 0.75rem;
 }
 
 /* Animations */
 @keyframes fadeUpAnimation {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
@@ -372,41 +483,41 @@ onMounted(() => {
 }
 
 .animate-fade-up {
-  animation: fadeUpAnimation 1s ease-out;
+  animation: fadeUpAnimation 1s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .animate-fade-up-delay {
-  animation: fadeUpAnimation 1s ease-out 0.3s both;
+  animation: fadeUpAnimation 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s both;
 }
 
 .animate-bounce {
-  animation: bounceAnimation 2s infinite;
+  animation: bounceAnimation 2s infinite ease-in-out;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .hero-section {
-    padding: 3rem 0;
-  }
-  
   .display-4 {
     font-size: 2rem;
   }
   
-  .custom-tab {
-    margin: 5px 0;
-    padding: 10px 16px;
-    font-size: 14px;
+  .display-2 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content {
+    padding: 2rem !important;
   }
 }
 
 @media (max-width: 576px) {
-  .nav-pills {
+  .custom-nav-pills {
     flex-direction: column;
+    border-radius: 20px;
   }
   
-  .custom-tab {
-    margin: 3px 0;
+  .custom-nav-pills .nav-link {
+    width: 100%;
+    margin-bottom: 5px;
   }
 }
 </style>
