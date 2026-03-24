@@ -13,7 +13,7 @@
           <a class="nav__link" href="#skills"   @click.prevent="navClick('#skills')">Skills</a>
           <a class="nav__link" href="#projects" @click.prevent="navClick('#projects')">Projects</a>
           <a class="nav__link" href="#contact"  @click.prevent="navClick('#contact')">Contact</a>
-          <a class="nav__cta btn btn--primary" href="mailto:kimdavidritardo@gmail.com">
+          <a class="nav__cta btn btn--primary" href="mailto:kdtechnologist@gmail.com">
             Hire Me
           </a>
         </div>
@@ -54,7 +54,7 @@
 
           <p class="hero__desc">
             I design and build high-performance web applications from intuitive frontends
-            to robust backend systems â€” with a relentless focus on clean code and real-world impact.
+            to robust backend systems with a relentless focus on clean code and real-world impact.
           </p>
 
           <div class="hero__actions">
