@@ -22,7 +22,11 @@
       <p class="card__desc">{{ project.description }}</p>
 
       <div class="card__tech">
-        <span v-for="tech in project.technologies" :key="tech" class="card__badge">
+        <span
+          v-for="tech in project.technologies"
+          :key="tech"
+          class="card__badge"
+        >
           {{ tech }}
         </span>
       </div>
@@ -38,18 +42,18 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed } from "vue";
 
 const props = defineProps({
   project: { type: Object, required: true },
-  index:   { type: Number, default: 0 }
-})
+  index: { type: Number, default: 0 },
+});
 
-const emit = defineEmits(['open-modal'])
+const emit = defineEmits(["open-modal"]);
 
-const thumbnailUrl = computed(() =>
-  `https://img.youtube.com/vi/${props.project.videoId}/maxresdefault.jpg`
-)
+const thumbnailUrl = computed(
+  () => `https://img.youtube.com/vi/${props.project.videoId}/maxresdefault.jpg`,
+);
 </script>
 
 <style scoped>
@@ -60,14 +64,23 @@ const thumbnailUrl = computed(() =>
   border: 1px solid var(--border);
   border-radius: 14px;
   overflow: hidden;
-  transition: border-color 0.25s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    border-color 0.25s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   animation: card-in 0.55s ease both;
   animation-delay: var(--delay, 0ms);
 }
 
 @keyframes card-in {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .card:hover {
@@ -93,7 +106,9 @@ const thumbnailUrl = computed(() =>
   transition: transform 0.45s ease;
   display: block;
 }
-.card:hover .card__img { transform: scale(1.04); }
+.card:hover .card__img {
+  transform: scale(1.04);
+}
 
 .card__overlay {
   position: absolute;
@@ -107,7 +122,9 @@ const thumbnailUrl = computed(() =>
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-.card__thumb:hover .card__overlay { opacity: 1; }
+.card__thumb:hover .card__overlay {
+  opacity: 1;
+}
 
 .card__play {
   width: 54px;
@@ -122,7 +139,9 @@ const thumbnailUrl = computed(() =>
   transition: transform 0.25s ease;
   padding-left: 3px;
 }
-.card__thumb:hover .card__play { transform: scale(1.08); }
+.card__thumb:hover .card__play {
+  transform: scale(1.08);
+}
 
 .card__watch {
   font-size: 0.75rem;
@@ -194,7 +213,9 @@ const thumbnailUrl = computed(() =>
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--text-2);
-  transition: color 0.2s, gap 0.2s;
+  transition:
+    color 0.2s,
+    gap 0.2s;
   letter-spacing: 0.01em;
 }
 .card__btn:hover {
@@ -205,5 +226,7 @@ const thumbnailUrl = computed(() =>
   font-size: 0.7rem;
   transition: transform 0.2s;
 }
-.card__btn:hover i { transform: translateX(2px); }
+.card__btn:hover i {
+  transform: translateX(2px);
+}
 </style>

@@ -15,7 +15,11 @@
               <span class="modal-label">Project</span>
               <h2 class="modal-title">{{ project?.title }}</h2>
             </div>
-            <button class="modal-close" @click="emit('close')" aria-label="Close modal">
+            <button
+              class="modal-close"
+              @click="emit('close')"
+              aria-label="Close modal"
+            >
               <i class="fas fa-times"></i>
             </button>
           </div>
@@ -29,7 +33,14 @@
                   :src="youtubeEmbedUrl"
                   title="Project demo video"
                   frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                  "
                   allowfullscreen
                 ></iframe>
               </div>
@@ -49,7 +60,8 @@
                     v-for="tech in project.technologies"
                     :key="tech"
                     class="modal-tag"
-                  >{{ tech }}</span>
+                    >{{ tech }}</span
+                  >
                 </div>
               </div>
             </div>
@@ -61,23 +73,26 @@
 </template>
 
 <script setup>
-import { computed, watch } from 'vue'
+import { computed, watch } from "vue";
 
 const props = defineProps({
   project: { type: Object, default: null },
-  show:    { type: Boolean, default: false }
-})
+  show: { type: Boolean, default: false },
+});
 
-const emit = defineEmits(['close'])
+const emit = defineEmits(["close"]);
 
 const youtubeEmbedUrl = computed(() => {
-  if (!props.project?.videoId) return ''
-  return `https://www.youtube.com/embed/${props.project.videoId}?autoplay=1&rel=0`
-})
+  if (!props.project?.videoId) return "";
+  return `https://www.youtube.com/embed/${props.project.videoId}?autoplay=1&rel=0`;
+});
 
-watch(() => props.show, (val) => {
-  document.body.style.overflow = val ? 'hidden' : ''
-})
+watch(
+  () => props.show,
+  (val) => {
+    document.body.style.overflow = val ? "hidden" : "";
+  },
+);
 </script>
 
 <style scoped>
@@ -118,7 +133,11 @@ watch(() => props.show, (val) => {
   border-bottom: 1px solid var(--border);
   flex-shrink: 0;
 }
-.modal-header__left { display: flex; flex-direction: column; gap: 4px; }
+.modal-header__left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
 .modal-label {
   font-family: var(--font-mono);
   font-size: 0.66rem;
@@ -166,7 +185,9 @@ watch(() => props.show, (val) => {
 }
 
 /* Video */
-.modal-video { flex-shrink: 0; }
+.modal-video {
+  flex-shrink: 0;
+}
 .video-wrap {
   position: relative;
   width: 100%;
@@ -228,9 +249,16 @@ watch(() => props.show, (val) => {
 }
 
 /* Scrollbar inside modal */
-.modal-body::-webkit-scrollbar       { width: 4px; }
-.modal-body::-webkit-scrollbar-track { background: transparent; }
-.modal-body::-webkit-scrollbar-thumb { background: var(--bg-4); border-radius: 2px; }
+.modal-body::-webkit-scrollbar {
+  width: 4px;
+}
+.modal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.modal-body::-webkit-scrollbar-thumb {
+  background: var(--bg-4);
+  border-radius: 2px;
+}
 
 /* Transition */
 .modal-enter-active,
@@ -239,7 +267,9 @@ watch(() => props.show, (val) => {
 }
 .modal-enter-active .modal-panel,
 .modal-leave-active .modal-panel {
-  transition: transform 0.28s ease, opacity 0.25s ease;
+  transition:
+    transform 0.28s ease,
+    opacity 0.25s ease;
 }
 .modal-enter-from,
 .modal-leave-to {
@@ -256,9 +286,18 @@ watch(() => props.show, (val) => {
 
 /* Responsive */
 @media (max-width: 640px) {
-  .modal-panel       { border-radius: 14px; max-height: 95vh; }
-  .modal-header      { padding: 18px 20px 16px; }
-  .modal-body        { padding: 18px 20px 22px; }
-  .modal-details     { grid-template-columns: 1fr; }
+  .modal-panel {
+    border-radius: 14px;
+    max-height: 95vh;
+  }
+  .modal-header {
+    padding: 18px 20px 16px;
+  }
+  .modal-body {
+    padding: 18px 20px 22px;
+  }
+  .modal-details {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

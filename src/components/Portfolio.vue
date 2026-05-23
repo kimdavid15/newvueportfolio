@@ -1,6 +1,5 @@
 ﻿<template>
   <div class="portfolio">
-
     <!--  NAVIGATION -->
     <nav class="nav" :class="{ 'nav--scrolled': isScrolled }">
       <div class="nav__inner container">
@@ -9,11 +8,31 @@
         </a>
 
         <div class="nav__links" :class="{ 'nav__links--open': menuOpen }">
-          <a class="nav__link" href="#about"    @click.prevent="navClick('#about')">About</a>
-          <a class="nav__link" href="#skills"   @click.prevent="navClick('#skills')">Skills</a>
-          <a class="nav__link" href="#projects" @click.prevent="navClick('#projects')">Projects</a>
-          <a class="nav__link" href="#contact"  @click.prevent="navClick('#contact')">Contact</a>
-          <a class="nav__cta btn btn--primary" href="mailto:kdtechnologist@gmail.com">
+          <a class="nav__link" href="#about" @click.prevent="navClick('#about')"
+            >About</a
+          >
+          <a
+            class="nav__link"
+            href="#skills"
+            @click.prevent="navClick('#skills')"
+            >Skills</a
+          >
+          <a
+            class="nav__link"
+            href="#projects"
+            @click.prevent="navClick('#projects')"
+            >Projects</a
+          >
+          <a
+            class="nav__link"
+            href="#contact"
+            @click.prevent="navClick('#contact')"
+            >Contact</a
+          >
+          <a
+            class="nav__cta btn btn--primary"
+            href="mailto:kdtechnologist@gmail.com"
+          >
             Hire Me
           </a>
         </div>
@@ -45,23 +64,32 @@
 
           <h1 class="hero__title">
             <span class="hero__title-name">Kim David</span>
-            <span class="hero__title-name hero__title-name--outline">Ritardo</span>
+            <span class="hero__title-name hero__title-name--outline"
+              >Ritardo</span
+            >
           </h1>
 
-          <p class="hero__role">
-            Web Developer
-          </p>
+          <p class="hero__role">Web Developer</p>
 
           <p class="hero__desc">
-            I design and build high-performance web applications from intuitive frontends
-            to robust backend systems with a relentless focus on clean code and real-world impact.
+            I design and build high-performance web applications from intuitive
+            frontends to robust backend systems with a relentless focus on clean
+            code and real-world impact.
           </p>
 
           <div class="hero__actions">
-            <a href="#projects" class="btn btn--primary" @click.prevent="scrollTo('#projects')">
+            <a
+              href="#projects"
+              class="btn btn--primary"
+              @click.prevent="scrollTo('#projects')"
+            >
               View My Work <i class="fas fa-arrow-down"></i>
             </a>
-            <a href="#contact" class="btn btn--ghost" @click.prevent="scrollTo('#contact')">
+            <a
+              href="#contact"
+              class="btn btn--ghost"
+              @click.prevent="scrollTo('#contact')"
+            >
               Get In Touch
             </a>
           </div>
@@ -88,22 +116,27 @@
             <div class="about__meta">
               <p class="about__name">Kim David Ritardo</p>
               <p class="about__tag">Web Developer</p>
-              <p class="about__location"><i class="fas fa-map-marker-alt"></i> Philippines</p>
+              <p class="about__location">
+                <i class="fas fa-map-marker-alt"></i> Philippines
+              </p>
             </div>
           </div>
 
           <div class="about__right">
             <h2 class="section-title reveal">
-              Turning ideas into <span class="text-gradient">digital reality.</span>
+              Turning ideas into
+              <span class="text-gradient">digital reality.</span>
             </h2>
             <p class="about__text reveal">
-              I'm a passionate web developer who thrives at the intersection of design and engineering.
-              With hands-on experience across multiple stacks  PHP, Laravel, Vue.js, Python, and more. I build
-              products that are fast, accessible, and a pleasure to use.
+              I'm a passionate web developer who thrives at the intersection of
+              design and engineering. With hands-on experience across multiple
+              stacks PHP, Laravel, Vue.js, Python, and more. I build products
+              that are fast, accessible, and a pleasure to use.
             </p>
             <p class="about__text reveal">
-              Whether it's a complex inventory system, a healthcare application, or a real-time communication platform,
-              I bring ideas from initial concept all the way to production deployment.
+              Whether it's a complex inventory system, a healthcare application,
+              or a real-time communication platform, I bring ideas from initial
+              concept all the way to production deployment.
             </p>
 
             <div class="about__stats reveal">
@@ -125,10 +158,20 @@
               <a href="mailto:kdtechnologist@gmail.com" class="about__link">
                 <i class="fas fa-envelope"></i> kdtechnologist@gmail.com
               </a>
-              <a href="https://github.com/kimdavid15" target="_blank" rel="noopener noreferrer" class="about__link">
+              <a
+                href="https://github.com/kimdavid15"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="about__link"
+              >
                 <i class="fab fa-github"></i> GitHub
               </a>
-              <a href="www.linkedin.com/in/kd1501" target="_blank" rel="noopener noreferrer" class="about__link">
+              <a
+                href="www.linkedin.com/in/kd1501"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="about__link"
+              >
                 <i class="fab fa-linkedin"></i> LinkedIn
               </a>
             </div>
@@ -141,8 +184,13 @@
     <section id="skills" class="skills section section--alt">
       <div class="container">
         <div class="section-label reveal">Skills</div>
-        <h2 class="section-title reveal">Tech Stack &amp; <span class="text-gradient">Expertise</span></h2>
-        <p class="section-desc reveal">A curated set of tools, languages, and frameworks I work with to build complete solutions.</p>
+        <h2 class="section-title reveal">
+          Tech Stack &amp; <span class="text-gradient">Expertise</span>
+        </h2>
+        <p class="section-desc reveal">
+          A curated set of tools, languages, and frameworks I work with to build
+          complete solutions.
+        </p>
 
         <div class="skills__grid">
           <div
@@ -158,7 +206,9 @@
               <h3 class="skill-card__title">{{ cat.name }}</h3>
             </div>
             <div class="skill-tags">
-              <span v-for="s in cat.skills" :key="s" class="skill-tag">{{ s }}</span>
+              <span v-for="s in cat.skills" :key="s" class="skill-tag">{{
+                s
+              }}</span>
             </div>
           </div>
         </div>
@@ -169,8 +219,13 @@
     <section id="projects" class="projects section">
       <div class="container">
         <div class="section-label reveal">Work</div>
-        <h2 class="section-title reveal">Featured <span class="text-gradient">Projects</span></h2>
-        <p class="section-desc reveal">A showcase of real-world applications I've designed, built, and shipped.</p>
+        <h2 class="section-title reveal">
+          Featured <span class="text-gradient">Projects</span>
+        </h2>
+        <p class="section-desc reveal">
+          A showcase of real-world applications I've designed, built, and
+          shipped.
+        </p>
 
         <div class="tab-bar reveal">
           <button
@@ -208,27 +263,54 @@
         <div class="section-label reveal">Contact</div>
         <div class="contact__inner">
           <h2 class="contact__heading reveal">
-            Let's build something <span class="text-gradient">great together.</span>
+            Let's build something
+            <span class="text-gradient">great together.</span>
           </h2>
           <p class="contact__desc reveal">
-            I'm currently open to new opportunities freelance, full-time, or collaboration.
-            If you have a project in mind or just want to connect, I'd love to hear from you.
+            I'm currently open to new opportunities freelance, full-time, or
+            collaboration. If you have a project in mind or just want to
+            connect, I'd love to hear from you.
           </p>
-          <a href="mailto:kdtechnologist@gmail.com" class="btn btn--primary btn--lg reveal">
+          <a
+            href="mailto:kdtechnologist@gmail.com"
+            class="btn btn--primary btn--lg reveal"
+          >
             Say Hello <i class="fas fa-paper-plane"></i>
           </a>
 
           <div class="social-row reveal">
-            <a href="https://github.com/kimdavid15" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+            <a
+              href="https://github.com/kimdavid15"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-btn"
+              aria-label="GitHub"
+            >
               <i class="fab fa-github"></i>
             </a>
-            <a href="https://www.linkedin.com/in/kd1501/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+            <a
+              href="https://www.linkedin.com/in/kd1501/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-btn"
+              aria-label="LinkedIn"
+            >
               <i class="fab fa-linkedin-in"></i>
             </a>
-            <a href="https://web.facebook.com/kr0015" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook">
+            <a
+              href="https://web.facebook.com/kr0015"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-btn"
+              aria-label="Facebook"
+            >
               <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="mailto:kdtechnologist@gmail.com" class="social-btn" aria-label="Email">
+            <a
+              href="mailto:kdtechnologist@gmail.com"
+              class="social-btn"
+              aria-label="Email"
+            >
               <i class="fas fa-envelope"></i>
             </a>
           </div>
@@ -242,7 +324,8 @@
         <div class="footer__inner">
           <span class="footer__logo">KDR<span class="dot">.</span></span>
           <p class="footer__copy">
-            Designed &amp; built by <strong>Kim David Ritardo</strong> &copy; {{ currentYear }}
+            Designed &amp; built by <strong>Kim David Ritardo</strong> &copy;
+            {{ currentYear }}
           </p>
           <p class="footer__stack">Built with Vue.js &amp; Vite</p>
         </div>
@@ -255,206 +338,259 @@
       :show="showModal"
       @close="closeModal"
     />
-
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
-import ProjectCard from './ProjectCard.vue'
-import ProjectModal from './ProjectModal.vue'
+import { ref, computed, onMounted, onUnmounted } from "vue";
+import ProjectCard from "./ProjectCard.vue";
+import ProjectModal from "./ProjectModal.vue";
 
-
-const activeTab       = ref('latest')
-const showModal       = ref(false)
-const selectedProject = ref(null)
-const isScrolled      = ref(false)
-const menuOpen        = ref(false)
-const currentYear     = new Date().getFullYear()
-
+const activeTab = ref("latest");
+const showModal = ref(false);
+const selectedProject = ref(null);
+const isScrolled = ref(false);
+const menuOpen = ref(false);
+const currentYear = new Date().getFullYear();
 
 const skillCategories = [
   {
-    name: 'Frontend',
-    icon: 'fas fa-palette',
-    skills: ['HTML5', 'CSS3', 'JavaScript', 'Vue.js', 'Bootstrap', 'jQuery']
+    name: "Frontend",
+    icon: "fas fa-palette",
+    skills: ["HTML5", "CSS3", "JavaScript", "Vue.js", "Bootstrap", "jQuery"],
   },
   {
-    name: 'Backend',
-    icon: 'fas fa-server',
-    skills: ['PHP', 'Laravel', 'Python', 'Flask', 'C#.NET', 'VB.NET', 'CodeIgniter']
+    name: "Backend",
+    icon: "fas fa-server",
+    skills: [
+      "PHP",
+      "Laravel",
+      "Python",
+      "Flask",
+      "C#.NET",
+      "VB.NET",
+      "CodeIgniter",
+    ],
   },
   {
-    name: 'Database',
-    icon: 'fas fa-database',
-    skills: ['MySQL', 'SQLite', 'SQL Server', 'MS Access']
+    name: "Database",
+    icon: "fas fa-database",
+    skills: ["MySQL", "SQLite", "SQL Server", "MS Access"],
   },
   {
-    name: 'Tools & Others',
-    icon: 'fas fa-tools',
-    skills: ['Git', 'VS Code', 'Postman', 'REST APIs', 'SMS API', 'Voice Recognition']
-  }
-]
-
+    name: "Tools & Others",
+    icon: "fas fa-tools",
+    skills: [
+      "Git",
+      "VS Code",
+      "Postman",
+      "REST APIs",
+      "SMS API",
+      "Voice Recognition",
+    ],
+  },
+];
 
 const latestProjects = ref([
   {
     id: 1,
-    title: 'LU Chats',
-    description: 'A fully responsive messaging web app providing seamless communication between students and faculty at Laguna University.',
-    technologies: ['PHP', 'Laravel', 'Bootstrap', 'JavaScript'],
-    videoId: 'CRYmVVQ9R5Q',
-    longDescription: 'This project is a fully responsive web application designed to provide simple, real-time-like communication between students and faculty at Laguna University. It features user authentication, conversation threading, and a clean mobile-first UI.'
+    title: "LU Chats",
+    description:
+      "A fully responsive messaging web app providing seamless communication between students and faculty at Laguna University.",
+    technologies: ["PHP", "Laravel", "Bootstrap", "JavaScript"],
+    videoId: "CRYmVVQ9R5Q",
+    longDescription:
+      "This project is a fully responsive web application designed to provide simple, real-time-like communication between students and faculty at Laguna University. It features user authentication, conversation threading, and a clean mobile-first UI.",
   },
   {
     id: 2,
-    title: 'LU Supply Office System',
-    description: 'A full-featured web inventory management system for the Supply Office of Laguna University.',
-    technologies: ['PHP', 'Laravel 10', 'Bootstrap', 'JavaScript'],
-    videoId: 'kMFIr-V82aY',
-    longDescription: 'A comprehensive web inventory system built with PHP Laravel 10. Manages supply requests, stock tracking, and reporting for the university supply office with role-based access control.'
-  }
-])
+    title: "LU Supply Office System",
+    description:
+      "A full-featured web inventory management system for the Supply Office of Laguna University.",
+    technologies: ["PHP", "Laravel 10", "Bootstrap", "JavaScript"],
+    videoId: "kMFIr-V82aY",
+    longDescription:
+      "A comprehensive web inventory system built with PHP Laravel 10. Manages supply requests, stock tracking, and reporting for the university supply office with role-based access control.",
+  },
+
+    {
+    id: 3,
+    title: "System / Software Project Price Estimator Laravel 13 / Llama 3.1 ",
+    description:
+      "A system / software project estimator made with laravel 13 and Llama 3.1.",
+    technologies: ["PHP", "Laravel 13", "Bootstrap 5", "JavaScript","Llama 3.1b"],
+    videoId: "4jNU87w7KaU",
+    longDescription:
+      "A system / software project estimator made with laravel 13 and powered by Llama 3.1 model. Just select the type of client you are in, enter a few details of the project you want to develop in english or tagalog and then you just need to wait a few seconds and the project details, pricing, tips and many more will appear.",
+  },
+
+    {
+    id: 4,
+    title: "Carbon Footprint Tracker Laravel 13",
+    description:
+      "A simple Carbon Footprint tracker made with laravel 13.",
+    technologies: ["PHP", "Laravel 13", "Bootstrap 5", "JavaScript"],
+    videoId: "r0HmHCHZ9Ns",
+    longDescription:
+      "A simple system that allows you to track, monitor, manage your carbon footprint the system also tells recommendations on how to reduce your carbon footprint based on the data you store in the system.",
+  },
+]);
 
 const vanillaProjects = ref([
   {
     id: 5,
-    title: 'e-Commerce Project',
-    description: 'A fully functional e-commerce platform developed during an internship at Village88 Inc.',
-    technologies: ['PHP', 'CodeIgniter', 'Bootstrap', 'JavaScript'],
-    videoId: 'h2QoEEtr_Qw',
-    longDescription: 'Created during my internship at Village88 Inc. A complete e-commerce site with product browsing, cart functionality, and order processing built on CodeIgniter.'
+    title: "e-Commerce Project",
+    description:
+      "A fully functional e-commerce platform developed during an internship at Village88 Inc.",
+    technologies: ["PHP", "CodeIgniter", "Bootstrap", "JavaScript"],
+    videoId: "h2QoEEtr_Qw",
+    longDescription:
+      "Created during my internship at Village88 Inc. A complete e-commerce site with product browsing, cart functionality, and order processing built on CodeIgniter.",
   },
   {
     id: 6,
-    title: 'Crime Monitoring & Analysis',
-    description: 'A web-based crime monitoring, reporting, and statistical analysis platform with SMS notifications.',
-    technologies: ['PHP', 'Bootstrap', 'JavaScript', 'SMS API'],
-    videoId: 'IuDbhb7Q0Pk',
-    longDescription: 'A web-based crime monitoring, reporting, and analysis system that integrates SMS API for real-time notifications to authorities and community members.'
+    title: "Crime Monitoring & Analysis",
+    description:
+      "A web-based crime monitoring, reporting, and statistical analysis platform with SMS notifications.",
+    technologies: ["PHP", "Bootstrap", "JavaScript", "SMS API"],
+    videoId: "IuDbhb7Q0Pk",
+    longDescription:
+      "A web-based crime monitoring, reporting, and analysis system that integrates SMS API for real-time notifications to authorities and community members.",
   },
   {
     id: 7,
-    title: 'Pharmabot',
-    description: 'An intelligent voice recognition pharmaceutical assistant built with C# and external microphone input.',
-    technologies: ['C#.NET', 'Voice Recognition', 'External Microphone'],
-    videoId: 'MbE1aleSOZU',
-    longDescription: 'A desktop voice recognition bot built using C# that assists with pharmaceutical queries. Uses an external microphone and speech recognition libraries for natural language interaction.'
+    title: "Pharmabot",
+    description:
+      "An intelligent voice recognition pharmaceutical assistant built with C# and external microphone input.",
+    technologies: ["C#.NET", "Voice Recognition", "External Microphone"],
+    videoId: "MbE1aleSOZU",
+    longDescription:
+      "A desktop voice recognition bot built using C# that assists with pharmaceutical queries. Uses an external microphone and speech recognition libraries for natural language interaction.",
   },
   {
     id: 8,
-    title: 'Calauan COVID-19 H.I.S',
-    description: 'A web-based COVID-19 Health Information System for monitoring and managing cases in Calauan, Laguna.',
-    technologies: ['PHP', 'Bootstrap', 'JavaScript'],
-    videoId: 'QwCorZkcurk',
-    longDescription: 'This project aims to monitor COVID-19 status and case management for the Calauan, Laguna area. Features real-time case tracking, reporting dashboards, and health status monitoring.'
+    title: "Calauan COVID-19 H.I.S",
+    description:
+      "A web-based COVID-19 Health Information System for monitoring and managing cases in Calauan, Laguna.",
+    technologies: ["PHP", "Bootstrap", "JavaScript"],
+    videoId: "QwCorZkcurk",
+    longDescription:
+      "This project aims to monitor COVID-19 status and case management for the Calauan, Laguna area. Features real-time case tracking, reporting dashboards, and health status monitoring.",
   },
   {
     id: 9,
-    title: 'BOH Consultation System',
-    description: 'A web-based online consultation and appointment management system with integrated video conferencing.',
-    technologies: ['PHP', 'Bootstrap', 'JavaScript', 'Video Conference API'],
-    videoId: 'wXaCvUfbu6Y',
-    longDescription: 'A web-based online consultation and appointment setter with integrated video conferencing capabilities for a Bureau of Health facility.'
+    title: "BOH Consultation System",
+    description:
+      "A web-based online consultation and appointment management system with integrated video conferencing.",
+    technologies: ["PHP", "Bootstrap", "JavaScript", "Video Conference API"],
+    videoId: "wXaCvUfbu6Y",
+    longDescription:
+      "A web-based online consultation and appointment setter with integrated video conferencing capabilities for a Bureau of Health facility.",
   },
   {
     id: 10,
-    title: 'Resort Reservation System',
-    description: 'A desktop resort reservation and management system with booking, availability tracking, and reporting.',
-    technologies: ['C#.NET'],
-    videoId: 'skbtqcm1x0I',
-    longDescription: 'A stand-alone desktop resort reservation system built with C#.NET. Manages room bookings, guest records, availability calendars, and printable reports.'
+    title: "Resort Reservation System",
+    description:
+      "A desktop resort reservation and management system with booking, availability tracking, and reporting.",
+    technologies: ["C#.NET"],
+    videoId: "skbtqcm1x0I",
+    longDescription:
+      "A stand-alone desktop resort reservation system built with C#.NET. Manages room bookings, guest records, availability calendars, and printable reports.",
   },
   {
     id: 11,
-    title: 'Hotel Reservation System',
-    description: 'A web-based hotel reservation system with customer booking, room management, and vacancy monitoring.',
-    technologies: ['Python', 'Flask', 'Bootstrap', 'JavaScript'],
-    videoId: '6q6YA8Dyd7Y',
-    longDescription: 'Built with Python Flask, this system accepts online reservations from customers, manages room vacancies, and provides an admin dashboard for hotel operations.'
+    title: "Hotel Reservation System",
+    description:
+      "A web-based hotel reservation system with customer booking, room management, and vacancy monitoring.",
+    technologies: ["Python", "Flask", "Bootstrap", "JavaScript"],
+    videoId: "6q6YA8Dyd7Y",
+    longDescription:
+      "Built with Python Flask, this system accepts online reservations from customers, manages room vacancies, and provides an admin dashboard for hotel operations.",
   },
   {
     id: 12,
-    title: 'Imakorean Inventory System',
-    description: 'A stand-alone desktop inventory management system for a Korean restaurant business.',
-    technologies: ['VB.NET'],
-    videoId: 'FH1_ba3dFmc',
-    longDescription: 'A stand-alone inventory system made with VB.NET, designed specifically for Imakorean restaurant to manage stock, suppliers, and inventory reports.'
+    title: "Imakorean Inventory System",
+    description:
+      "A stand-alone desktop inventory management system for a Korean restaurant business.",
+    technologies: ["VB.NET"],
+    videoId: "FH1_ba3dFmc",
+    longDescription:
+      "A stand-alone inventory system made with VB.NET, designed specifically for Imakorean restaurant to manage stock, suppliers, and inventory reports.",
   },
   {
     id: 13,
-    title: 'Dental Appointment System',
-    description: 'A desktop dental clinic appointment scheduler and patient record management system.',
-    technologies: ['VBA'],
-    videoId: '1SY4dHuLDM0',
-    longDescription: 'A simple but complete dental appointment system built with VBA. Manages patient records, appointment scheduling, and basic billing within a Microsoft Office environment.'
-  }
-])
-
+    title: "Dental Appointment System",
+    description:
+      "A desktop dental clinic appointment scheduler and patient record management system.",
+    technologies: ["VBA"],
+    videoId: "1SY4dHuLDM0",
+    longDescription:
+      "A simple but complete dental appointment system built with VBA. Manages patient records, appointment scheduling, and basic billing within a Microsoft Office environment.",
+  },
+]);
 
 const activeProjects = computed(() =>
-  activeTab.value === 'latest' ? latestProjects.value : vanillaProjects.value
-)
+  activeTab.value === "latest" ? latestProjects.value : vanillaProjects.value,
+);
 
 const tabIndicatorStyle = computed(() => ({
-  transform: activeTab.value === 'latest' ? 'translateX(0%)' : 'translateX(100%)',
-  width: '50%'
-}))
+  transform:
+    activeTab.value === "latest" ? "translateX(0%)" : "translateX(100%)",
+  width: "50%",
+}));
 
 const openModal = (project) => {
-  selectedProject.value = project
-  showModal.value = true
-}
+  selectedProject.value = project;
+  showModal.value = true;
+};
 
 const closeModal = () => {
-  showModal.value = false
-  selectedProject.value = null
-}
+  showModal.value = false;
+  selectedProject.value = null;
+};
 
 const scrollTo = (selector) => {
-  menuOpen.value = false
-  document.querySelector(selector)?.scrollIntoView({ behavior: 'smooth' })
-}
+  menuOpen.value = false;
+  document.querySelector(selector)?.scrollIntoView({ behavior: "smooth" });
+};
 
 const navClick = (selector) => {
-  menuOpen.value = false
+  menuOpen.value = false;
   setTimeout(() => {
-    document.querySelector(selector)?.scrollIntoView({ behavior: 'smooth' })
-  }, 50)
-}
+    document.querySelector(selector)?.scrollIntoView({ behavior: "smooth" });
+  }, 50);
+};
 
 const handleScroll = () => {
-  isScrolled.value = window.scrollY > 60
-}
+  isScrolled.value = window.scrollY > 60;
+};
 
 const setupReveal = () => {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('revealed')
-          observer.unobserve(entry.target)
+          entry.target.classList.add("revealed");
+          observer.unobserve(entry.target);
         }
-      })
+      });
     },
-    { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
-  )
-  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el))
-}
-
+    { threshold: 0.1, rootMargin: "0px 0px -60px 0px" },
+  );
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+};
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll, { passive: true })
-  setTimeout(setupReveal, 120)
-})
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  setTimeout(setupReveal, 120);
+});
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
+  window.removeEventListener("scroll", handleScroll);
+});
 </script>
 
 <style scoped>
-
 .nav {
   position: fixed;
   top: 0;
@@ -462,7 +598,10 @@ onUnmounted(() => {
   right: 0;
   z-index: 1000;
   padding: 20px 0;
-  transition: padding 0.3s ease, background 0.3s ease, border-bottom 0.3s ease;
+  transition:
+    padding 0.3s ease,
+    background 0.3s ease,
+    border-bottom 0.3s ease;
   border-bottom: 1px solid transparent;
 }
 .nav--scrolled {
@@ -484,8 +623,12 @@ onUnmounted(() => {
   color: var(--text-1);
   transition: color 0.2s;
 }
-.nav__logo:hover { color: var(--white); }
-.dot { color: var(--text-3); }
+.nav__logo:hover {
+  color: var(--white);
+}
+.dot {
+  color: var(--text-3);
+}
 
 .nav__links {
   display: flex;
@@ -499,7 +642,9 @@ onUnmounted(() => {
   transition: color 0.2s;
   letter-spacing: 0.01em;
 }
-.nav__link:hover { color: var(--white); }
+.nav__link:hover {
+  color: var(--white);
+}
 .nav__cta {
   padding: 9px 20px;
   font-size: 0.85rem;
@@ -520,10 +665,16 @@ onUnmounted(() => {
   transition: all 0.3s ease;
   transform-origin: center;
 }
-.nav__burger--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav__burger--open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.nav__burger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
+.nav__burger--open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav__burger--open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav__burger--open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
 
 .hero {
   position: relative;
@@ -539,11 +690,19 @@ onUnmounted(() => {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.026) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.026) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.026) 1px, transparent 1px);
   background-size: 64px 64px;
-  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 80%);
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(
+    ellipse 80% 70% at 50% 40%,
+    black 30%,
+    transparent 80%
+  );
+  mask-image: radial-gradient(
+    ellipse 80% 70% at 50% 40%,
+    black 30%,
+    transparent 80%
+  );
   pointer-events: none;
 }
 
@@ -554,7 +713,11 @@ onUnmounted(() => {
   right: -200px;
   width: 700px;
   height: 700px;
-  background: radial-gradient(circle, rgba(255,255,255,0.028) 0%, transparent 65%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.028) 0%,
+    transparent 65%
+  );
   pointer-events: none;
 }
 
@@ -564,7 +727,9 @@ onUnmounted(() => {
   padding-top: 100px;
   padding-bottom: 80px;
 }
-.hero__content { max-width: 780px; }
+.hero__content {
+  max-width: 780px;
+}
 
 /* Badge */
 .hero__badge {
@@ -574,7 +739,7 @@ onUnmounted(() => {
   padding: 7px 14px;
   border-radius: 100px;
   border: 1px solid var(--border-md);
-  background: rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.04);
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 500;
@@ -588,12 +753,19 @@ onUnmounted(() => {
   height: 7px;
   border-radius: 50%;
   background: #4ade80;
-  box-shadow: 0 0 8px rgba(74,222,128,0.7);
+  box-shadow: 0 0 8px rgba(74, 222, 128, 0.7);
   animation: pulse-dot 2.4s infinite;
 }
 @keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.6; transform: scale(0.8); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.8);
+  }
 }
 
 /* Giant title */
@@ -610,7 +782,7 @@ onUnmounted(() => {
 }
 .hero__title-name--outline {
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(255,255,255,0.45);
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.45);
 }
 
 .hero__role {
@@ -663,10 +835,16 @@ onUnmounted(() => {
   animation: scroll-hint 2s ease-in-out infinite;
 }
 @keyframes scroll-hint {
-  0%, 100% { opacity: 0.4; transform: scaleY(1); }
-  50%       { opacity: 1;   transform: scaleY(0.6) translateY(30%); }
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(0.6) translateY(30%);
+  }
 }
-
 
 .about__grid {
   display: grid;
@@ -712,7 +890,9 @@ onUnmounted(() => {
   border: 1px solid var(--border);
 }
 
-.about__meta { text-align: center; }
+.about__meta {
+  text-align: center;
+}
 .about__name {
   font-size: 0.95rem;
   font-weight: 700;
@@ -730,7 +910,9 @@ onUnmounted(() => {
   font-size: 0.8rem;
   color: var(--text-3);
 }
-.about__location i { margin-right: 5px; }
+.about__location i {
+  margin-right: 5px;
+}
 
 .about__text {
   font-size: 1.05rem;
@@ -753,7 +935,9 @@ onUnmounted(() => {
   text-align: center;
   transition: border-color 0.25s;
 }
-.stat-card:hover { border-color: var(--border-high); }
+.stat-card:hover {
+  border-color: var(--border-high);
+}
 .stat-card__number {
   display: block;
   font-size: 1.9rem;
@@ -792,7 +976,6 @@ onUnmounted(() => {
   color: var(--white);
   background: var(--bg-3);
 }
-
 
 .skills__grid {
   display: grid;
@@ -858,7 +1041,6 @@ onUnmounted(() => {
   color: var(--white);
 }
 
-
 .tab-bar {
   position: relative;
   display: inline-flex;
@@ -884,8 +1066,12 @@ onUnmounted(() => {
   gap: 7px;
   white-space: nowrap;
 }
-.tab-btn--active { color: var(--white); }
-.tab-btn:hover:not(.tab-btn--active) { color: var(--text-2); }
+.tab-btn--active {
+  color: var(--white);
+}
+.tab-btn:hover:not(.tab-btn--active) {
+  color: var(--text-2);
+}
 
 .tab-bar__indicator {
   position: absolute;
@@ -904,7 +1090,6 @@ onUnmounted(() => {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 22px;
 }
-
 
 .contact__inner {
   max-width: 640px;
@@ -970,7 +1155,10 @@ onUnmounted(() => {
   font-size: 0.82rem;
   color: var(--text-3);
 }
-.footer__copy strong { color: var(--text-2); font-weight: 600; }
+.footer__copy strong {
+  color: var(--text-2);
+  font-weight: 600;
+}
 .footer__stack {
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -989,7 +1177,9 @@ onUnmounted(() => {
     position: static;
     gap: 24px;
   }
-  .about__meta { text-align: left; }
+  .about__meta {
+    text-align: left;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1010,16 +1200,33 @@ onUnmounted(() => {
     transition: transform 0.35s var(--ease);
     z-index: 999;
   }
-  .nav__links--open { transform: translateX(0); }
-  .nav__link { font-size: 1.1rem; }
-  .nav__cta { align-self: flex-start; }
-  .nav__burger { display: flex; }
+  .nav__links--open {
+    transform: translateX(0);
+  }
+  .nav__link {
+    font-size: 1.1rem;
+  }
+  .nav__cta {
+    align-self: flex-start;
+  }
+  .nav__burger {
+    display: flex;
+  }
 
-  .hero__title { margin-bottom: 24px; }
-  .hero__actions { flex-direction: column; }
-  .hero__actions .btn { width: 100%; justify-content: center; }
+  .hero__title {
+    margin-bottom: 24px;
+  }
+  .hero__actions {
+    flex-direction: column;
+  }
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
 
-  .about__stats { grid-template-columns: repeat(3, 1fr); }
+  .about__stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   .project-grid {
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -1027,11 +1234,26 @@ onUnmounted(() => {
 }
 
 @media (max-width: 480px) {
-  .about__stats { grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  .stat-card__number { font-size: 1.5rem; }
-  .tab-bar { width: 100%; }
-  .tab-btn { flex: 1; justify-content: center; }
-  .tab-bar__indicator { width: 50%; }
-  .footer__inner { flex-direction: column; align-items: flex-start; }
+  .about__stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .stat-card__number {
+    font-size: 1.5rem;
+  }
+  .tab-bar {
+    width: 100%;
+  }
+  .tab-btn {
+    flex: 1;
+    justify-content: center;
+  }
+  .tab-bar__indicator {
+    width: 50%;
+  }
+  .footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 </style>
